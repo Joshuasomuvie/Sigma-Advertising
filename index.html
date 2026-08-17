@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Advertising — Customer Acquisition Systems for Nigerian Growth Businesses</title>
+    <meta name="description" content="Sigma Advertising builds end-to-end paid customer acquisition engines on Meta, TikTok, and Google Ads for Nigerian businesses. Turn social media attention into WhatsApp sales and revenue.">
+    
+    <!-- Site Icon / Favicon -->
+    <link rel="icon" type="image/png" href="ADVERTISING_20260814_103143_0000(2)[1].png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAFA;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F3F3F3;
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --text-muted: #888888;
+            --border-color: #E2E2E2;
+            --border-hover: #111111;
+            --accent-black: #111111;
+            --accent-white: #FFFFFF;
+            --tag-bg: #EFEFEF;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --header-bg: rgba(250, 250, 250, 0.85);
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Newsreader', Georgia, serif;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0A0A0A;
+            --bg-surface: #121212;
+            --bg-subtle: #1A1A1A;
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --text-muted: #666666;
+            --border-color: #222222;
+            --border-hover: #FFFFFF;
+            --accent-black: #FFFFFF;
+            --accent-white: #111111;
+            --tag-bg: #1F1F1F;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --header-bg: rgba(10, 10, 10, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            font-weight: 700;
+        }
+
+        .serif {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Layout Grid */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Header / Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-mark {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Buttons & Badges */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.6rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-black);
+            color: var(--accent-white);
+            border-color: var(--accent-black);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background-color: var(--bg-subtle);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.82rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.8rem;
+            background-color: var(--tag-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #10B981;
+        }
+
+        /* Theme Switcher */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--border-hover);
+            background-color: var(--bg-subtle);
+        }
+
+        /* Section Components */
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 6rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 640px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-meta-item svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Strategic Framework / Pillars */
+        .pillar-num {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+            letter-spacing: 0.1em;
+        }
+
+        .pillar-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Comparison Table / Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comparison-box {
+            padding: 2.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-box.bad {
+            background-color: var(--bg-subtle);
+        }
+
+        .comparison-box.good {
+            background-color: var(--bg-surface);
+            border-color: var(--text-primary);
+        }
+
+        .comparison-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0 2rem 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-2, .grid-3, .grid-4, .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="logo">
+                    <img src="ADVERTISING_20260814_103143_0000(2)[1].png" alt="Sigma Advertising Logo" class="logo-mark">
+                    Sigma Advertising
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#framework">Framework</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#comparison">Why Us</a></li>
+                    <li><a href="#audit">Audit</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    <a href="#audit" class="btn btn-primary btn-sm">Book Strategy Call</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Paid Customer Acquisition Systems
+            </div>
+            <h1 class="hero-title">
+                We Build End-to-End <br>
+                <span class="serif">Acquisition Engines</span> for Nigerian Businesses.
+            </h1>
+            <p class="hero-subtitle">
+                Stop wasting budget on boosted posts. We combine Meta Ads, TikTok Ads, direct-response copy, and automated WhatsApp conversion funnels to scale your business predictably.
+            </p>
+            <div class="hero-actions">
+                <a href="#audit" class="btn btn-primary">
+                    Request Account Audit
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#framework" class="btn btn-secondary">Explore The System</a>
+            </div>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Meta & TikTok Specialists
+                </div>
+                <div class="hero-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    WhatsApp & Landing Page Funnels
+                </div>
+                <div class="hero-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Data & Profit Tracking
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Framework / Pillars -->
+    <section class="section" id="framework">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Complete Customer Acquisition Ecosystem</h2>
+                <p class="section-lead">Traffic without conversion is just vanity. We engineer the entire path from cold scroll to verified sale.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <span class="pillar-num">01 / TRAFFIC</span>
+                    <h3 class="pillar-title">Direct-Response Ads</h3>
+                    <p>High-converting Meta, TikTok, and Google ad creatives engineered around consumer psychology and pattern interruption.</p>
+                </div>
+                <div class="card">
+                    <span class="pillar-num">02 / CONVERSION</span>
+                    <h3 class="pillar-title">Landing Pages & WhatsApp</h3>
+                    <p>Custom, mobile-optimized funnels that strip away friction, build trust, and convert Nigerian buyers instantly.</p>
+                </div>
+                <div class="card">
+                    <span class="pillar-num">03 / AUTOMATION</span>
+                    <h3 class="pillar-title">Sales & Follow-Up</h3>
+                    <p>Automated sequences that qualify leads, handle objections, and capture orders on WhatsApp 24/7.</p>
+                </div>
+                <div class="card">
+                    <span class="pillar-num">04 / OPTIMIZATION</span>
+                    <h3 class="pillar-title">Attribution & Scale</h3>
+                    <p>Strict unit-economics tracking to lower your Customer Acquisition Cost (CAC) and scale ROAS predictably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section" id="comparison">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Why Traditional Agencies Fail in Nigeria</h2>
+                <p class="section-lead">Most agencies focus on likes and impressions. We optimize strictly for net customer revenue.</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-box bad">
+                    <div class="comparison-title" style="color: #EF4444;">
+                        ✕ Typical Social Media Agencies
+                    </div>
+                    <ul class="comparison-list">
+                        <li>✕ Focus on vanity metrics (Likes, Comments, Impressions)</li>
+                        <li>✕ Randomly boost Instagram posts without funnel strategy</li>
+                        <li>✕ Send traffic to slow, non-converting web pages</li>
+                        <li>✕ Ignore WhatsApp lead follow-up and sales conversion</li>
+                        <li>✕ Guess budgets without understanding unit economics</li>
+                    </ul>
+                </div>
+                <div class="comparison-box good">
+                    <div class="comparison-title" style="color: #10B981;">
+                        ✓ The Sigma Growth Architecture
+                    </div>
+                    <ul class="comparison-list">
+                        <li>✓ Optimizes strictly for qualified leads, orders, and revenue</li>
+                        <li>✓ Builds structured campaign funnels on Meta & TikTok</li>
+                        <li>✓ High-speed, mobile-first landing pages built for local trust</li>
+                        <li>✓ Integrated WhatsApp automation for instant closing</li>
+                        <li>✓ Rigorous CAC, AOV, and ROAS performance tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit / CTA Section -->
+    <section class="section" id="audit">
+        <div class="container">
+            <div class="card" style="padding: 4rem 2rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Ready to Build Your Acquisition Engine?</h2>
+                <p class="section-lead" style="margin-bottom: 2rem;">
+                    Book a free strategic audit with our team. We'll evaluate your offer, ad account, and funnel architecture to pinpoint bottlenecks.
+                </p>
+                <a href="https://wa.me/" class="btn btn-primary btn-lg" style="padding: 1rem 2rem; font-size: 1rem;">
+                    Schedule Strategy Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="logo">
+                    <img src="ADVERTISING_20260814_103143_0000(2)[1].png" alt="Sigma Advertising Logo" class="logo-mark">
+                    Sigma Advertising
+                </a>
+                <p style="font-size: 0.9rem;">Customer Acquisition Engines for Nigerian Growth Businesses</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sigma Advertising. All rights reserved.</p>
+                <p>Built for growth and profitability.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+        });
+    </script>
+</body>
+</html>
