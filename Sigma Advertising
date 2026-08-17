@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Advertising — Customer Acquisition Systems for Nigerian Growth Businesses</title>
+    <meta name="description" content="Sigma Advertising builds end-to-end paid customer acquisition engines on Meta, TikTok, and Google Ads for Nigerian businesses. Turn social media attention into WhatsApp sales and revenue.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAFA;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F3F3F3;
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --text-muted: #888888;
+            --border-color: #E2E2E2;
+            --border-hover: #111111;
+            --accent-black: #111111;
+            --accent-white: #FFFFFF;
+            --tag-bg: #EFEFEF;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --header-bg: rgba(250, 250, 250, 0.85);
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Newsreader', Georgia, serif;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0A0A0A;
+            --bg-surface: #121212;
+            --bg-subtle: #1A1A1A;
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --text-muted: #666666;
+            --border-color: #222222;
+            --border-hover: #FFFFFF;
+            --accent-black: #FFFFFF;
+            --accent-white: #111111;
+            --tag-bg: #1F1F1F;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --header-bg: rgba(10, 10, 10, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            font-weight: 700;
+        }
+
+        .serif {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Layout Grid */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Header / Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-mark {
+            width: 12px;
+            height: 12px;
+            background-color: var(--text-primary);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Buttons & Badges */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.6rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-black);
+            color: var(--accent-white);
+            border-color: var(--accent-black);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background-color: var(--bg-subtle);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.82rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.8rem;
+            background-color: var(--tag-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #10B981;
+        }
+
+        /* Theme Switcher */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--border-hover);
+            background-color: var(--bg-subtle);
+        }
+
+        /* Section Components */
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 6rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 640px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-meta-item svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Strategic Framework / Pillars */
+        .pillar-num {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+            letter-spacing: 0.1em;
+        }
+
+        .pillar-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Comparison Table / Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comparison-box {
+            padding: 2.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-box.bad {
+            background-color: var(--bg-subtle);
+        }
+
+        .comparison-box.good {
+            background-color: var(--bg-surface);
+            border-color: var(--text-primary);
+        }
+
+        .comparison-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+
+        .comparison-list li::before {
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            font-weight: 800;
+        }
+
+        .comparison-box.bad .comparison-list li::before {
+            content: "✕";
+            color: #EF4444;
+        }
+
+        .comparison-box.good .comparison-list li::before {
+            content: "✓";
+            color: #10B981;
+        }
+
+        /* Pricing Tiers */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--text-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            min-height: 42px;
+        }
+
+        .pricing-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-period {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .pricing-features li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .pricing-features li svg {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            margin-top: 3px;
+        }
+
+        /* Ecosystem / DeltaFlow Bridge */
+        .ecosystem-banner {
+            background-color: var(--bg-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .ecosystem-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .ecosystem-diagram {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 0.85rem;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        /* Direct Outreach Continuation Banner */
+        .outreach-context {
+            background-color: var(--bg-surface);
+            border: 1px dashed var(--border-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .outreach-context svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-primary);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0 2rem;
+            background-color: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            max-width: 320px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-2, .grid-3, .grid-4, .pricing-grid, .comparison-grid, .ecosystem-banner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding-top: 7.5rem;
+                padding-bottom: 4rem;
+            }
+
+            .hero-title {
+                font-size: 2.1rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="logo">
+                    <span class="logo-mark"></span>
+                    Sigma Advertising
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#problem">The Problem</a></li>
+                    <li><a href="#strategy">Our Strategy</a></li>
+                    <li><a href="#fit">Who It's For</a></li>
+                    <li><a href="#pricing">Pricing & Plans</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <svg id="sunIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                    <a href="https://wa.me/?text=Hello%20Sigma%20Advertising,%20I%20reviewed%20your%20customer%20acquisition%20framework%20and%20want%20to%20discuss%20a%20campaign." class="btn btn-primary btn-sm">Talk to Strategy Advisor</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="outreach-context">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+                    <span>Following up on our recent conversation? This breakdown details exactly how Sigma acquires paying customers for Nigerian businesses.</span>
+                </div>
+
+                <div class="badge">
+                    <span class="badge-dot"></span> Paid Customer Acquisition Systems
+                </div>
+
+                <h1 class="hero-title">
+                    Stop Burning Ad Spend on Likes.<br>
+                    Build a System That Gets You <span class="serif">Real Customers.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Sigma engineers end-to-end Meta and TikTok advertising engines designed specifically for the Nigerian consumer market. We don't sell vanity impressions—we drive WhatsApp conversations, qualified leads, and measurable revenue.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#pricing" class="btn btn-primary">
+                        View Service Plans & Pricing
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#strategy" class="btn btn-secondary">See How It Works</a>
+                </div>
+
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        Direct-to-WhatsApp Funnels
+                    </div>
+                    <div class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        Meta & TikTok Ads Specialists
+                    </div>
+                    <div class="hero-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        Full Attribution & Tracking
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section id="problem" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="pillar-num">01 / THE DIAGNOSIS</span>
+                    <h2 class="section-title">The Nigerian Ad Trap: Why Most Campaigns Fail</h2>
+                    <p class="section-lead">
+                        Most Nigerian businesses aren't failing at advertising because their products are bad. They are failing because they mistake "boosting posts" for building a customer acquisition architecture.
+                    </p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-box bad">
+                        <h3>The Typical "Boosted Post" Approach</h3>
+                        <ul class="comparison-list">
+                            <li>Pressing the "Boost" button inside Instagram or Facebook with generic targeting.</li>
+                            <li>Flooded with low-intent "How much?" comments that ghost after hearing the price.</li>
+                            <li>No dedicated sales script or structured offer handling in DMs or WhatsApp.</li>
+                            <li>Zero retargeting—paying repeatedly to reach new people while ignoring warm leads.</li>
+                            <li>No clarity on Cost Per Customer Acquisition (CAC) or Return on Ad Spend (ROAS).</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-box good">
+                        <h3>The Sigma Acquisition Engine</h3>
+                        <ul class="comparison-list">
+                            <li>Structured Meta & TikTok Ads Manager setups using custom campaign objectives.</li>
+                            <li>Direct-response copy and angle-tested creatives that pre-qualify buyers before they click.</li>
+                            <li>Directing traffic straight to high-converting WhatsApp sales environments or landing pages.</li>
+                            <li>Custom retargeting sequences that convert hesitant prospects over days, not seconds.</li>
+                            <li>Strict focus on metrics that matter: Ad Spend → Qualified Leads → Closed Sales → Net Profit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Sigma Does (Strategy) -->
+        <section id="strategy" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="pillar-num">02 / THE ARCHITECTURE</span>
+                    <h2 class="section-title">How We Turn Ad Spend into Revenue</h2>
+                    <p class="section-lead">
+                        We build complete paid media engines. Every stage of the journey is intentionally designed to address Nigerian consumer skepticism and close sales efficiently.
+                    </p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <span class="pillar-num">STEP 1</span>
+                        <h3 class="pillar-title">Offer & Positioning Strategy</h3>
+                        <p>We refine your product positioning, pricing structure, and guarantees to make your offer irresistible to the local market before spending a single Naira on ads.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="pillar-num">STEP 2</span>
+                        <h3 class="pillar-title">Direct-Response Creative & Copy</h3>
+                        <p>We write persuasive ad copy and produce pattern-interrupting video and image creatives designed to stop the scroll and filter for real intent.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="pillar-num">STEP 3</span>
+                        <h3 class="pillar-title">Traffic & Campaign Setup</h3>
+                        <p>Deploying structured campaigns inside Meta Ads Manager (Facebook & Instagram) and TikTok Ads Manager using precise broad, lookalike, and interest targeting.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="pillar-num">STEP 4</span>
+                        <h3 class="pillar-title">WhatsApp & Web Funnel Design</h3>
+                        <p>We structure the exact destination after the click—whether it's a frictionless WhatsApp greeting sequence or a fast, mobile-optimized landing page.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="pillar-num">STEP 5</span>
+                        <h3 class="pillar-title">Retargeting & Friction Reduction</h3>
+                        <p>Nigerian buyers require trust. We deploy social proof ads, customer reviews, and objection-handling creatives to win over buyers sitting on the fence.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="pillar-num">STEP 6</span>
+                        <h3 class="pillar-title">Analytics & Daily Optimization</h3>
+                        <p>We constantly monitor cost per click (CPC), click-through rate (CTR), cost per lead (CPL), and return on ad spend (ROAS) to kill underperforming ads and scale winners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem / DeltaFlow Bridge -->
+        <section class="section">
+            <div class="container">
+                <div class="ecosystem-banner">
+                    <div class="ecosystem-content">
+                        <div class="badge">Optional Automation Layer</div>
+                        <h3>Need High-Volume WhatsApp Sales Automation?</h3>
+                        <p>When Sigma's advertising scales your campaign, incoming message volume on WhatsApp can get overwhelming. For businesses handling dozens or hundreds of daily chats, Sigma integrates seamlessly with <strong>DeltaFlow Tech</strong>—our automated WhatsApp conversation and CRM engine.</p>
+                    </div>
+                    <div class="ecosystem-diagram">
+                        SIGMA PAID ADS<br>
+                        &nbsp;&nbsp;│ (Meta / TikTok Traffic)<br>
+                        &nbsp;&nbsp;▼<br>
+                        WHATSAPP CHAT INBOUND<br>
+                        &nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;├─► [MANUAL SALES DESK] (Default)<br>
+                        &nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;└─► [DELTAFLOW ENGINE] (Optional)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Auto-Qualification<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Product Recommendations<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ Automated Follow-ups
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Market / Fit -->
+        <section id="fit" class="section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pillar-num">03 / QUALIFICATION</span>
+                    <h2 class="section-title">Who Sigma Is Built For</h2>
+                    <p class="section-lead">
+                        We work with growth-focused businesses operating in high-demand consumer and business sectors across Nigeria.
+                    </p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card">
+                        <h4>Fashion & Apparel</h4>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Ready-to-wear, footwear, luxury accessories, and bespoke clothing brands scaling online.</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Beauty, Hair & Skincare</h4>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Cosmetics, perfumes, luxury wig vendors, and specialized skincare brands with strong visual appeal.</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Gadgets & Consumer Tech</h4>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Smartphone vendors, computer accessories, home electronics, and smart home importer outlets.</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>High-Margin Services</h4>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Real estate developers, specialized consultation services, logistics, and high-ticket B2B agencies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Tiers & Pricing -->
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pillar-num">04 / INVESTMENT</span>
+                    <h2 class="section-title">Transparent Service Plans</h2>
+                    <p class="section-lead">
+                        Clear monthly retainers for campaign management and acquisition engineering. Ad spend is paid directly to the ad platforms (Meta/TikTok/Google).
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Growth Foundation -->
+                    <div class="pricing-card">
+                        <div>
+                            <div class="pricing-header">
+                                <h3>Growth Foundation</h3>
+                                <p class="pricing-desc">For established businesses looking to build a structured paid acquisition baseline on Meta.</p>
+                            </div>
+                            <div class="pricing-price">₦250,000</div>
+                            <span class="pricing-period">per month management fee</span>
+
+                            <ul class="pricing-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Meta Ads Management (FB & IG)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Direct-to-WhatsApp Funnel Structure
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    2 Creative Angles (Images/Carousels)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Pixel & Conversion API Integration
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Bi-weekly Performance Reports
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/?text=Hello%20Sigma%20Advertising,%20I%20want%20to%20get%20started%20with%20the%20Growth%20Foundation%20plan." class="btn btn-secondary">Select Foundation Plan</a>
+                    </div>
+
+                    <!-- Scale Engine -->
+                    <div class="pricing-card featured">
+                        <span class="featured-tag">MOST POPULAR</span>
+                        <div>
+                            <div class="pricing-header">
+                                <h3>Scale Engine</h3>
+                                <p class="pricing-desc">Comprehensive multi-platform engine for businesses ready to aggressively scale order volume.</p>
+                            </div>
+                            <div class="pricing-price">₦500,000</div>
+                            <span class="pricing-period">per month management fee</span>
+
+                            <ul class="pricing-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Meta + TikTok Ads Management
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Dedicated High-Converting Landing Page OR Advanced WhatsApp Funnel
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    4 Creative Angles (UGC Video + Static)
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Advanced Retargeting Sequences
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Weekly Performance Optimization Calls
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/?text=Hello%20Sigma%20Advertising,%20I%20want%20to%20get%20started%20with%20the%20Scale%20Engine%20plan." class="btn btn-primary">Select Scale Engine</a>
+                    </div>
+
+                    <!-- Enterprise / Custom -->
+                    <div class="pricing-card">
+                        <div>
+                            <div class="pricing-header">
+                                <h3>Enterprise Acquisition</h3>
+                                <p class="pricing-desc">Full acquisition infrastructure engineering, multi-channel management, and custom integrations.</p>
+                            </div>
+                            <div class="pricing-price">Custom</div>
+                            <span class="pricing-period">based on scale & scope</span>
+
+                            <ul class="pricing-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Meta + TikTok + Google Ads
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Full Web Funnel & Custom Landing Pages
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    DeltaFlow WhatsApp CRM Setup Included
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Custom Content Production Strategy
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    Dedicated Strategic Growth Advisor
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/?text=Hello%20Sigma%20Advertising,%20I%20want%20to%20inquire%20about%20the%20Enterprise%20Acquisition%20tier." class="btn btn-secondary">Contact Strategic Advisor</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pillar-num">05 / CLARITY</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How is ad spend paid?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Ad spend is separate from our management fee. You pay your ad budget directly to Meta, TikTok, or Google using your own business card or payment account inside your Ads Manager. We guide you on setting up local payment options safely.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Why do you focus so heavily on WhatsApp?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            In Nigeria, consumer trust is established in direct conversations. While traditional e-commerce works for some products, direct WhatsApp pathways allow Nigerian buyers to ask questions, verify stock, confirm delivery options, and build confidence before transferring funds.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does it take to see results after launching?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Campaign setup, creative build, and funnel design take 3–5 business days. Once launched, campaigns begin driving initial clicks and leads within 24 to 48 hours. The first 7 to 14 days serve as our optimization window to refine target audience feedback and stabilize your acquisition costs.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you create the ad graphics and videos?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes. We handle direct-response ad creative design, image assets, video scripts, and editing. Where physical product footage is required, we provide exact filming directions for your team or collaborate to gather raw product media.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="border-bottom: none;">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Build a Predictable Acquisition Engine?</h2>
+                <p style="max-width: 600px; margin: 0 auto 2.5rem;" class="section-lead">
+                    Stop guessing with boosted posts. Let's analyze your current offer and build a paid customer system tailored for the Nigerian market.
+                </p>
+                <a href="https://wa.me/?text=Hello%20Sigma%20Advertising,%20I'm%20ready%20to%20discuss%20building%20a%20paid%20customer%20acquisition%20engine%20for%20my%20business." class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
+                    Speak Directly With Sigma Strategy
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-mark"></span>
+                        Sigma Advertising
+                    </a>
+                    <p>Paid customer acquisition systems engineered for Nigerian e-commerce, vendors, and growth enterprises.</p>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.9rem;">Core Capabilities</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;">
+                        Meta Ads (FB & IG)<br>
+                        TikTok Ads<br>
+                        WhatsApp Sales Funnels<br>
+                        Conversion Rate Optimization<br>
+                        Offer & Positioning Architecture
+                    </p>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.9rem;">Ecosystem Partner</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;">
+                        Integrates with <strong>DeltaFlow Tech</strong><br>
+                        Automated WhatsApp Sales CRM
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Sigma Advertising. All rights reserved.</div>
+                <div>Designed for high-intent customer acquisition.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions & Theme Toggle -->
+    <script>
+        // Light / Dark Theme Switching Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('sigma_theme') || 'light';
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+
+        function setTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            localStorage.setItem('sigma_theme', theme);
+
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        }
+
+        // Accordion functionality for FAQ
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faq => faq.classList.remove('active'));
+
+                // Toggle selected
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
