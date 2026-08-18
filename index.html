@@ -807,19 +807,36 @@
         }
 
         /* Footer */
-        .site-footer {
-            padding: 3rem 0;
+        footer {
+            padding: 4rem 0 2rem;
+            background-color: var(--bg-primary);
             border-top: 1px solid var(--border-color);
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
         .footer-inner {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            max-width: 320px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
         }
 
         /* Responsive Breakpoints */
@@ -893,14 +910,10 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <div class="badge">
-                            <span class="badge-dot"></span>
-                            <span>Paid Acquisition Partner for Nigerian Businesses</span>
-                        </div>
                         <h1 class="hero-title">Stop Relying on Luck, Referrals, and Boosted Posts.</h1>
                         <p class="hero-subtitle">
                             We help established Nigerian businesses launch, manage, and scale high-converting
-                            advertising campaigns on Meta, TikTok, and Google—turning social media attention into
+                            advertising campaigns on Meta, TikTok, and Google, turning social media attention into
                             predictable daily WhatsApp orders and revenues.
                         </p>
                         <div class="hero-cta-group">
@@ -992,10 +1005,6 @@
         <section class="system-section section-padding" id="the-system">
             <div class="container">
                 <div class="section-header">
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        <span>End-to-End System</span>
-                    </div>
                     <h2 class="section-title">How Sigma Builds Your Customer Engine</h2>
                     <p class="section-description">
                         We don't just "run ads." We build an integrated system that captures attention, establishes
@@ -1167,10 +1176,6 @@
         <section class="pricing-section section-padding" id="pricing">
             <div class="container">
                 <div class="section-header center">
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        <span>Transparent Partnerships</span>
-                    </div>
                     <h2 class="section-title">Acquisition Partner Packages</h2>
                     <p class="section-description">Clear monthly retainers for campaign management and acquisition
                         engineering. Ad spend is paid directly to the ad platforms (Meta/TikTok/Google).</p>
@@ -1355,6 +1360,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <a href="#" class="logo">
+                          <img src="ADVERTISING_20260814_103143_0000(2)[1].png" alt="Sigma Advertising Logo" class="logo-mark">
                         <span class="logo-mark"></span>
                         Sigma Advertising
                     </a>
