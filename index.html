@@ -961,7 +961,7 @@
 
                 <div class="header-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                        <span id="themeIcon"><strong>Dark</strong></span>
+                        <span id="themeIcon">☾</span>
                     </button>
                     <a href="#book-call" class="btn btn-primary btn-sm">Book a Call</a>
                 </div>
@@ -1539,7 +1539,7 @@
         function setTheme(theme) {
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('sigma-theme', theme);
-            themeIcon.textContent = theme === 'dark' ? "<strong>Light</strong>" : "<strong>Dark</strong>";
+            themeIcon.textContent = theme === 'dark' ? '☼' : '☾';
         }
 
         // Accordion Interactive Logic for FAQ
