@@ -961,7 +961,7 @@
 
                 <div class="header-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                        <span id="themeIcon"><strong>Dark</strong></strong></span>
+                        <span id="themeIcon"><strong>Dark</strong></span>
                     </button>
                     <a href="#book-call" class="btn btn-primary btn-sm">Book a Call</a>
                 </div>
@@ -1328,8 +1328,8 @@
                     </div>
 
                     <div class="founder-content">
-                        <h3>Joshua Somuvie</h3>
-                        <h4>-Founder & Ads Strategist</h4>
+                        <h3>Joshua Somuvie</h3> <h4><i>- Founder & Ads Strategist</i></h4>
+                        <br>
                         <p>I'm Joshua Somuvie, founder of Sigma Advertising. I started this agency because I kept
                             seeing the same thing: businesses with a real product and real demand, spending money on
                             ads that were never built to convert, no tracking, no offer strategy, no plan beyond
@@ -1539,7 +1539,7 @@
         function setTheme(theme) {
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('sigma-theme', theme);
-            themeIcon.textContent = theme === 'dark' ? '<strong>Light</strong>' : '<strong>Dark</strong>';
+            themeIcon.textContent = theme === 'dark' ? "<strong>Light</strong>" : "<strong>Dark</strong>";
         }
 
         // Accordion Interactive Logic for FAQ
